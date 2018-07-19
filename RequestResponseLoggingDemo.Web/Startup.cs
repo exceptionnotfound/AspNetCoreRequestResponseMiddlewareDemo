@@ -36,6 +36,7 @@ namespace RequestResponseLoggingDemo.Web
                 app.UseDeveloperExceptionPage();
             }
 
+            //Add our new middleware to the pipeline
             app.UseMiddleware<RequestResponseLoggingMiddleware>();
 
             app.UseMvc();
