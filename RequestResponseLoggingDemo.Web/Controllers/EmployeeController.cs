@@ -20,7 +20,7 @@ namespace RequestResponseLoggingDemo.Web.Controllers
                 ID = id,
                 FirstName = "firstName",
                 LastName = "lastName",
-                DateOfBirth = DateTime.Now.AddYears(-30)
+                DateOfBirth = DateTime.Now.AddYears(-31)
             };
 
             return Ok(employee);
