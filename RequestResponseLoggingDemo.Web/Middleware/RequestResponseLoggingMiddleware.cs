@@ -59,8 +59,8 @@ namespace RequestResponseLoggingDemo.Web.Middleware
             //We convert the byte[] into a string using UTF8 encoding...
             var bodyAsText = Encoding.UTF8.GetString(buffer);
 
-            //..and finally, assign the read body back to the request body, which is allowed because of EnableBuffering()
-            request.Body = body;
+            // reset the stream position to 0, which is allowed because of EnableBuffering()
+            request.Body.Seek(0, SeekOrigin.Begin);
 
             return $"{request.Scheme} {request.Host}{request.Path} {request.QueryString} {bodyAsText}";
         }
